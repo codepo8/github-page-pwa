@@ -1,5 +1,22 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #333 0%, #000 100%);
-    color: #eee;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 2em;
+    height: 90vh;
+    background: url(/img/icon.png) 95% 95% no-repeat;
+    background-size: 20vh;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+p {
+    width: 80vw;
+}
+a {
+    color: #369;
 }
