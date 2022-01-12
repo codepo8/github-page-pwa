@@ -1,10 +1,12 @@
-var GHPATH = '/dice-throw-simulator';
-var APP_PREFIX = 'dicethrow_';
-var VERSION = 'version_06';
+var GHPATH = '/github-page-pwa';
+var APP_PREFIX = 'gppwa_';
+var VERSION = 'version_01';
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [    
   `${GHPATH}/`,
-  `${GHPATH}/index.html`
+  `${GHPATH}/index.html`,
+  `${GHPATH}/css/styles.css`,
+  `${GHPATH}/js/app.js`
 ]
 
 self.addEventListener('fetch', function (e) {
