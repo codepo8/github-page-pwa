@@ -1,6 +1,6 @@
 # Github page as a PWA template
 
-This is a bare-bones example on how to turn an index.html page on GitHub and hosted as a GitHub Page into an installable Progressive Web App with offline caching.
+This is a bare-bones example on how to turn an `index.html` document on GitHub and hosted as a GitHub Page into an installable Progressive Web App with offline caching.
 
 ## Changing the index.html
 
@@ -35,7 +35,7 @@ In the following example, each `codepo8` needs to become yours and `github-page-
 </html>
 ```
 
-## Changing the serviceworker to make your site available offline
+## Changing the service worker to make your site available offline
 
 The `sw.js` file is the ServiceWorker that defines which of the files in your application should become available offline. Again you need to change some settings to your needs.
 
