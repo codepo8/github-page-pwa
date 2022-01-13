@@ -1,10 +1,11 @@
 var GHPATH = '/github-page-pwa';
 var APP_PREFIX = 'gppwa_';
-var VERSION = 'version_001';
+var VERSION = 'version_002';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
   `${GHPATH}/css/styles.css`,
+  `${GHPATH}/img/icon.png`,
   `${GHPATH}/js/app.js`
 ]
 
