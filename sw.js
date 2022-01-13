@@ -1,6 +1,6 @@
 var GHPATH = '/github-page-pwa';
 var APP_PREFIX = 'gppwa_';
-var VERSION = 'version_00';
+var VERSION = 'version_01';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
@@ -9,7 +9,6 @@ var URLS = [
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
-
 self.addEventListener('fetch', function (e) {
   console.log('Fetch request : ' + e.request.url);
   e.respondWith(

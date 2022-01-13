@@ -2,6 +2,16 @@
 
 This is a bare-bones example on how to turn an `index.html` document on GitHub and hosted as a GitHub Page into an installable Progressive Web App with offline caching.
 
+As a reminder, you can host HTML, CSS and JavaScript files on GitHub as pages. For example, I have bare bones To Do app at https://github.com/codepo8/simple-to-do with an `index.html` document.
+
+In the settings of this repository `simple-to-do`, I chose to publish the `main` branch as a GitHub page as shown in the following screenshot.
+
+![Settings of the repository to publish it as a page on GitHub](publish-as-page.png)
+
+This means that this app is now available at https://codepo8.github.io/simple-to-do/. Every time I publish to the `main` branch, it triggers an action and the page is generated.
+
+This here is a template repository that does not only publish the page, but also offers it as an installable app and shows the page when the user is offline.
+
 ## Changing the index.html
 
 The first thing you need to do change is the `index.html` document. You need two things for this. Your GitHub username, for example in this case `codepo8` and the name of the repository you host as a GitHub Page, in this case `github-page-pwa`.
