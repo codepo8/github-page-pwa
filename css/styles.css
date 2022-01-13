@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 2em;
     height: 90vh;
-    background: url(/img/icon.png) 95% 95% no-repeat;
+    background: url(../img/icon.png) 95% 95% no-repeat;
     background-size: 20vh;
 }
 h1 {
