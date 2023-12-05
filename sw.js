@@ -1,6 +1,6 @@
 var GHPATH = '/cpts484';
 var APP_PREFIX = 'cpts484_';
-var VERSION = 'version_001';
+var VERSION = 'version_004';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
