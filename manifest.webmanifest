@@ -1,6 +1,6 @@
 {
-  "name": "Github Page PWA",
-  "short_name": "GPPWA",
+  "name": "CPTS 484 App",
+  "short_name": "App",
   "description": "Github Page as a Progressive Web App",
   "scope": "/cpts484/",
   "start_url": "/cpts484/",
