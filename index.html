@@ -51,8 +51,10 @@
               .map(result => result.transcript) 
               .join('') 
 
-          document.getElementById("p").innerHTML = transcript; 
-          console.log(transcript); 
+              if (transcript.includes('hello')) {
+                  document.getElementById("p").innerHTML = transcript;
+                  console.log(transcript);
+              }
       }); 
         
       if (speech == true) { 
