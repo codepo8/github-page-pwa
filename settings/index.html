@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub page as PWA template</title>
   <link rel="canonical" href="https://keeganmilsten.github.io/cpts484/" />
-  <link rel="manifest" href="/cpts484/manifest.webmanifest">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
  
-  <h1>GitHub page as PWA template</h1>
+  <h1>Settings</h1>
   <p>
     This is a PWA template for GitHub pages. 
     Make sure to check the README at 
@@ -28,7 +27,7 @@
         )
       }
   </script>
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script>
 
 
   <div class="words" contenteditable> 
@@ -37,7 +36,7 @@
   
   <script>
       // Set initial spoken text here
-      tts.text = "What can I help you with?";
+      tts.text = "Would you like the menu options spoken aloud to you?";
       
       // Update text
       const words = document.querySelector('.words'); 
@@ -49,12 +48,6 @@
           .map(result => result[0]) 
           .map(result => result.transcript) 
           .join('')
-          
-          // Print the text
-          if (transcript.includes('hello')) {
-              document.getElementById("p").innerHTML = transcript;
-              console.log(transcript);
-          }
           
           // Speak the text
           if (transcript.includes('help')) {

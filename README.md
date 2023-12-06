@@ -1,3 +1,7 @@
+# INSTRUCTIONS
+1. Use this in Chrome
+2. Add "https://keeganmilsten.github.io/cpts484/" to `Allowed to play sound` in [Chrome's Sound Settings]("chrome://settings/content/sound").
+
 # Github page as a PWA template
 
 This is a bare-bones example on how to turn an `index.html` document on GitHub and hosted as a GitHub Page into an installable Progressive Web App with offline caching.
