@@ -13,16 +13,13 @@
       <h2>Settings</h2>
 
       <label class="toggle">
-          <input class="toggle-checkbox" type="checkbox">
+          <input class="toggle-checkbox" type="checkbox" checked>
           <div class="toggle-switch"></div>
           <span class="toggle-label">Imperial Units</span>
       </label>
       
       <div class="spacer"/>
-      
       <div class="field"><input type="text" placeholder="Emergency Phrase" />
-          <div class="line"></div>
-      </div>
     </div>
   
   <script>
@@ -58,7 +55,8 @@
           .join('')
           
           // Speak the text
-          if (transcript.includes('help')) {
+          if (count == 0 && transcript.includes('help')) {
+              tts.text = "Would you like the menu options spoken aloud to you? If so, say yes. Otherwise, say no.";
               window.speechSynthesis.speak(tts);
               count = 1;
               console.log(transcript);
@@ -67,17 +65,26 @@
               tts.text = "Speak '1' to change whether distance is in feet or meters. Speak '2' to change the emergency word.";
               window.speechSynthesis.speak(tts);
           }
+          else if (count == 1 && transcript.includes('no')) {
+              tts.text = "OK. Nothing has been changed."
+              window.speechSynthesis.speak(tts);
+              count = 0;
+          }
           if (count == 1 && transcript.includes('one')) {
               tts.text = "Done! Measurements have been changed.";
               window.speechSynthesis.speak(tts);
+              count = 0;
+          }
+          if (count == 2) {
+              let emergencyWord = transcript;
+              tts.text = "Done! The emergency word is now, " + transcript;
+              window.speechSynthesis.speak(tts);
+              count = 0;
           }
           if (count == 1 && transcript.includes('two')) {
               tts.text = "What word do you want to change it to?";
               window.speechSynthesis.speak(tts);
               count = 2;
-          }
-          if (count == 2) {
-              let emergencyWord = transcript;
           }
       });
   </script> 
