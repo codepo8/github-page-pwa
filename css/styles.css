@@ -92,3 +92,23 @@ a {
     position: relative;
     top: 2px;
 }
+
+/* Spacer between elements */
+.spacer {
+    padding: 30px;
+}
+
+input {
+    width: 80vw;
+    max-width: 400px;
+    font-size: 1em;
+    transition: padding 0.3s 0.2s ease;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #ededed;
+    
+    &:focus {
+        border: none;
+    }
+}
