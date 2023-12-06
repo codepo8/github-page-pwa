@@ -8,16 +8,16 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
- 
-  <h1>Settings</h1>
-  <p>
-    This is a PWA template for GitHub pages. 
-    Make sure to check the README at 
-    <a href="https://github.com/codepo8/github-page-pwa/">https://github.com/codepo8/github-page-pwa/</a> and 
-    to change the necessary settings to your needs.
-    <br>
-    TESTING
-  </p>
+
+    <div class="section-container">
+      <h2>Settings</h2>
+
+      <label class="toggle">
+          <input class="toggle-checkbox" type="checkbox">
+          <div class="toggle-switch"></div>
+          <span class="toggle-label">Imperial Units</span>
+      </label>
+    </div>
   
   <script>
       if (navigator.serviceWorker) {
@@ -35,8 +35,10 @@
   </div>
   
   <script>
+      // Set variables
+      let count = 0;
       // Set initial spoken text here
-      tts.text = "Would you like the menu options spoken aloud to you?";
+      tts.text = "Would you like the menu options spoken aloud to you? If so, say yes.";
       
       // Update text
       const words = document.querySelector('.words'); 
@@ -52,7 +54,24 @@
           // Speak the text
           if (transcript.includes('help')) {
               window.speechSynthesis.speak(tts);
+              count = 1;
               console.log(transcript);
+          }
+          if (count == 1 && transcript.includes('yes')) {
+              tts.text = "Speak '1' to change whether distance is in feet or meters. Speak '2' to change the emergency word.";
+              window.speechSynthesis.speak(tts);
+          }
+          if (count == 1 && transcript.includes('one')) {
+              tts.text = "Done! Measurements have been changed.";
+              window.speechSynthesis.speak(tts);
+          }
+          if (count == 1 && transcript.includes('two')) {
+              tts.text = "What word do you want to change it to?";
+              window.speechSynthesis.speak(tts);
+              count = 2;
+          }
+          if (count == 2) {
+              let emergencyWord = transcript;
           }
       });
   </script> 

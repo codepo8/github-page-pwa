@@ -20,3 +20,75 @@ p {
 a {
     color: #369;
 }
+
+.section-container {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.toggle-class {
+    text-align: right;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.text-class {
+    float: left;
+}
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+    content: "";
+}
+.toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+    background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+    left: 30px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}
