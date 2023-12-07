@@ -13,13 +13,13 @@
       <h2>Settings</h2>
 
       <label class="toggle">
-          <input class="toggle-checkbox" type="checkbox" checked>
+          <input class="toggle-checkbox" type="checkbox" id="measurementToggle" onclick='toggleChange(this);'>
           <div class="toggle-switch"></div>
           <span class="toggle-label">Imperial Units</span>
       </label>
       
       <div class="spacer"/>
-      <div class="field"><input type="text" placeholder="Emergency Phrase" />
+      <div class="field"><input type="text" placeholder="Emergency Phrase" id="emergencyPhrase" onclick='changePhrase(this, this.text);' />
     </div>
   
   <script>
@@ -38,6 +38,18 @@
   </div>
   
   <script>
+      function toggleChange(checkbox) {
+          if (count == 1) {
+              document.getElementById("measurementToggle").checked = !document.getElementById("measurementToggle").checked;
+          }
+          console.log(document.getElementById("measurementToggle").checked);
+      }
+      
+      function changePhrase(textbox, newPhrase) {
+          if (count == 2) {
+              document.getElementById("emergencyPhrase").value = newPhrase;
+          }
+      }
       // Set variables
       let count = 0;
       // Set initial spoken text here
@@ -62,7 +74,7 @@
               console.log(transcript);
           }
           if (count == 1 && transcript.includes('yes')) {
-              tts.text = "Speak '1' to change whether distance is in feet or meters. Speak '2' to change the emergency word.";
+              tts.text = "Speak '1' to change whether distance is in feet or meters. Speak '2' to change the emergency phrase.";
               window.speechSynthesis.speak(tts);
           }
           else if (count == 1 && transcript.includes('no')) {
@@ -71,13 +83,15 @@
               count = 0;
           }
           if (count == 1 && transcript.includes('one')) {
+              toggleChange(document.getElementById("measurementToggle"));
               tts.text = "Done! Measurements have been changed.";
               window.speechSynthesis.speak(tts);
               count = 0;
           }
           if (count == 2) {
               let emergencyWord = transcript;
-              tts.text = "Done! The emergency word is now, " + transcript;
+              changePhrase(document.getElementById("emergencyPhrase"), transcript);
+              tts.text = "Done! The emergency phrase is now, " + transcript;
               window.speechSynthesis.speak(tts);
               count = 0;
           }
